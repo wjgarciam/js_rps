@@ -1,5 +1,5 @@
 const computerSelection = getComputerChoice(1,3)
-
+const playerSelection = 'rock'
 function getComputerChoice(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -13,5 +13,15 @@ function getComputerChoice(min, max) {
     };
 }
 
+function playRound (playerSelection, computerSelection) {
 
-console.log(computerSelection)
+    if (playerSelection == computerSelection) {
+        return 'tie!'
+    } else if (playerSelection > computerSelection) {
+        return 'you win!'
+    } else (playerSelection < computerSelection); {
+        return 'you lose :c'
+    }
+}
+
+console.log(playRound(playerSelection, computerSelection));
