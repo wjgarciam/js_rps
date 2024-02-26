@@ -1,5 +1,6 @@
 const computerSelection = getComputerChoice(1,3)
-const playerSelection = 'rock'
+let playerSelection = prompt("What's your pick?").toLowerCase();
+
 function getComputerChoice(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -24,4 +25,4 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection)); 
