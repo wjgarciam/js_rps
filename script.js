@@ -13,23 +13,11 @@ function getComputerChoice(min, max) {
         return 'scissors'
     };
 }
-function playRound (playerSelection, computerSelection) {
-
-    if (playerSelection == computerSelection) {
-        return 'tie!'
-    } else if (playerSelection > computerSelection) {
-        return 'you win!'
-    } else if (playerSelection < computerSelection) {
-        return 'you lose :c'
-    } else (playerSelection == null);
-        alert("Don't try me")
-};
 
 function getPlayerSelection () {
     let playerInput = prompt("Start the game by selecting Rock, Paper, or Scissors", "You must make a valid choice!")
     if (playerInput === null || playerInput === " ") {
         alert('Please enter an answer.');
-    getPlayerSelection();
     return;  
     }
     switch (playerInput.toLowerCase()) {
@@ -45,4 +33,16 @@ function getPlayerSelection () {
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function playRound (playerSelection, computerSelection) {
+
+    if (playerSelection == computerSelection) {
+        return +0
+    } else if (playerSelection > computerSelection) {
+        return +1
+    } else if (playerSelection < computerSelection) {
+        return -1
+    } else (playerSelection == null);
+        alert("Don't try me")
+}
+
+console.log(playRound (playerSelection, computerSelection))
