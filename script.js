@@ -1,5 +1,5 @@
 const computerSelection = getComputerChoice(1,3)
-let playerSelection = prompt("What's your pick?").toLowerCase();
+const playerSelection = getPlayerSelection()
 
 function getComputerChoice(min, max) {
     min = Math.ceil(min);
@@ -13,16 +13,36 @@ function getComputerChoice(min, max) {
         return 'scissors'
     };
 }
-
 function playRound (playerSelection, computerSelection) {
 
     if (playerSelection == computerSelection) {
         return 'tie!'
     } else if (playerSelection > computerSelection) {
         return 'you win!'
-    } else (playerSelection < computerSelection); {
+    } else if (playerSelection < computerSelection) {
         return 'you lose :c'
+    } else (playerSelection == null);
+        alert("Don't try me")
+};
+
+function getPlayerSelection () {
+    let playerInput = prompt("Start the game by selecting Rock, Paper, or Scissors", "You must make a valid choice!")
+    if (playerInput === null || playerInput === " ") {
+        alert('Please enter an answer.');
+    getPlayerSelection();
+    return;  
+    }
+    switch (playerInput.toLowerCase()) {
+        case "rock":
+            return "rock"
+        case "paper":
+            return "paper"
+        case "scissors":
+            return "scissors"  
+        default:
+            alert("Please make a valid choice!")
+            break;
     }
 }
 
-console.log(playRound(playerSelection, computerSelection)); 
+console.log(playRound(playerSelection, computerSelection));
