@@ -1,5 +1,7 @@
 const computerSelection = getComputerChoice()
-const playerSelection = getPlayerSelection() 
+let playerSelection = getPlayerSelection()
+let playerScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
     min = Math.ceil(1);
@@ -35,15 +37,6 @@ function getPlayerSelection () {
 
 function playRound (playerSelection, computerSelection) {
 
-     
-        
-    }
-
-function playGame () {
-    let playerScore = 0
-    let computerScore = 0
-
-    for (let i = 0; i <= 5; i++) {
         if (playerSelection == computerSelection) {
             return "It's a tie!"
         } else if (playerSelection > computerSelection) {
@@ -57,8 +50,10 @@ function playGame () {
         
     }
 
-}
-
-
-    console.log(playRound(playerSelection, computerSelection));
- 
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = getPlayerSelection()
+        let computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(playerScore)
+        console.log(computerScore)
+    }
