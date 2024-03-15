@@ -1,13 +1,10 @@
-const computerSelection = getComputerChoice(1,3)
-const playerSelection = getPlayerSelection()
-const matchResult = playRound (playerSelection, computerSelection)
-let playerScore = 0
-let computerScore = 0
+const computerSelection = getComputerChoice()
+const playerSelection = getPlayerSelection() 
 
-function getComputerChoice(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    let numberPick = Math.floor(Math.random() * (max - min + 1)) + min
+function getComputerChoice() {
+    min = Math.ceil(1);
+    max = Math.floor(3);
+    let numberPick = Math.floor(Math.random() * (3 - 1 + 1)) + 1
     if (numberPick == 1) {
         return "rock"
     } else if (numberPick == 2) {
@@ -38,21 +35,30 @@ function getPlayerSelection () {
 
 function playRound (playerSelection, computerSelection) {
 
+     
+        
+    }
+
+function playGame () {
+    let playerScore = 0
+    let computerScore = 0
+
+    for (let i = 0; i <= 5; i++) {
         if (playerSelection == computerSelection) {
-            return 0
+            return "It's a tie!"
         } else if (playerSelection > computerSelection) {
-            return +1
+            playerScore++
+            return "You win!"
         } else if (playerSelection < computerSelection) {
-            return -1
+            computerScore++
+            return "You lose!"
         } else (playerSelection == null);
             alert("Don't try me")
         
     }
 
-function playGame() {
-
-
-
 }
 
-console.log(playRound(playerSelection, computerSelection));
+
+    console.log(playRound(playerSelection, computerSelection));
+ 
